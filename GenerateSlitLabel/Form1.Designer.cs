@@ -1,6 +1,6 @@
 ﻿namespace GenerateSlitLabel
 {
-    partial class Form1
+    partial class GenerateSlitLabel
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GenerateSlitLabel));
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.previewBtn = new System.Windows.Forms.Button();
             this.printBtn = new System.Windows.Forms.Button();
             this.ErrMsg = new System.Windows.Forms.Label();
+            this.ScanLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // printPreviewDialog1
@@ -54,14 +55,16 @@
             // 
             // textBox1
             // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(12, 45);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(331, 20);
+            this.textBox1.Size = new System.Drawing.Size(331, 26);
             this.textBox1.TabIndex = 0;
-            this.textBox1.Text = "8CB028B31_1+IS+BEI+335+0.35+116";
+            this.textBox1.Text = "8CB777B00+PL+COK+4755+0.8+1025";
             // 
             // previewBtn
             // 
+            this.previewBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.previewBtn.Location = new System.Drawing.Point(362, 31);
             this.previewBtn.Name = "previewBtn";
             this.previewBtn.Size = new System.Drawing.Size(74, 47);
@@ -72,6 +75,7 @@
             // 
             // printBtn
             // 
+            this.printBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.printBtn.Location = new System.Drawing.Point(454, 31);
             this.printBtn.Name = "printBtn";
             this.printBtn.Size = new System.Drawing.Size(74, 47);
@@ -89,17 +93,27 @@
             this.ErrMsg.Size = new System.Drawing.Size(0, 33);
             this.ErrMsg.TabIndex = 4;
             // 
-            // Form1
+            // ScanLabel
+            // 
+            this.ScanLabel.AutoSize = true;
+            this.ScanLabel.Location = new System.Drawing.Point(13, 26);
+            this.ScanLabel.Name = "ScanLabel";
+            this.ScanLabel.Size = new System.Drawing.Size(70, 13);
+            this.ScanLabel.TabIndex = 5;
+            this.ScanLabel.Text = "Please Scan:";
+            // 
+            // GenerateSlitLabel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 195);
+            this.ClientSize = new System.Drawing.Size(551, 155);
+            this.Controls.Add(this.ScanLabel);
             this.Controls.Add(this.ErrMsg);
             this.Controls.Add(this.printBtn);
             this.Controls.Add(this.previewBtn);
             this.Controls.Add(this.textBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "GenerateSlitLabel";
+            this.Text = "GenerateSlitLabel";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,6 +127,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button printBtn;
         private System.Windows.Forms.Label ErrMsg;
+        private System.Windows.Forms.Label ScanLabel;
     }
 }
 

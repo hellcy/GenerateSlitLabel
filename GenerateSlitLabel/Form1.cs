@@ -47,21 +47,26 @@ namespace GenerateSlitLabel
                 // Create string to draw.
                 String drawString = slitLabels[pageNumber];
 
-                // Create font and brush.
-                System.Drawing.Font colorFont = new System.Drawing.Font("Ariel", 40, FontStyle.Bold);
-                SolidBrush drawBrush = new SolidBrush(Color.Black);
-
                 // center the text in a specified rectangle.
                 StringFormat sf = new StringFormat();
                 sf.LineAlignment = StringAlignment.Center;
                 sf.Alignment = StringAlignment.Center;
 
+                // Create font and brush.
+                SolidBrush drawBrush = new SolidBrush(Color.Black);
+
+                System.Drawing.Font colorFont = new System.Drawing.Font("Ariel", 40, FontStyle.Bold);
                 RectangleF colorRect = new RectangleF(160.0F, 40.0F, 200.0F, 80.0F);
                 g.DrawString(color, colorFont, drawBrush, colorRect, sf);
 
                 System.Drawing.Font typeFont = new System.Drawing.Font("Ariel", 30, FontStyle.Bold);
-                RectangleF typeRect = new RectangleF(170.0F, 120.0F, 180.0F, 70.0F);
+                RectangleF typeRect = new RectangleF(170.0F, 100.0F, 180.0F, 70.0F);
                 g.DrawString(type, typeFont, drawBrush, typeRect, sf);
+
+                string month_year = DateTime.Now.ToString("MMM").ToUpper() + "_" + DateTime.Now.ToString("yy");
+                System.Drawing.Font timeFont = new System.Drawing.Font("Ariel", 20, FontStyle.Bold);
+                RectangleF timeRect = new RectangleF(170.0F, 140.0F, 180.0F, 70.0F);
+                g.DrawString(month_year, timeFont, drawBrush, timeRect, sf);
 
                 System.Drawing.Font drawFont = new System.Drawing.Font("Ariel", 16);
 
@@ -195,7 +200,7 @@ namespace GenerateSlitLabel
         {
             // remember to set global variable pageNumber to 0 everytime you press the button. Reset the page number count.
             pageNumber = 0;
-            char[] delimiters = { ' ', '+' };
+            char[] delimiters = { ' ', ',' };
             string COILID, TYPE = "", COLOR, GAUGE, WIDTH;
             int WEIGHT, slitNumber = 0, slitWidth = 0;
             if (textBox1.Text.Length < 9)
@@ -206,9 +211,9 @@ namespace GenerateSlitLabel
 
             COILID = textBox1.Text.Substring(0, 9);
 
-            if ((System.IO.File.Exists(@"C:\FEB_19(A).csv")) == true)
+            if ((System.IO.File.Exists(@"C:\Coil master 28-02-2019.csv")) == true)
             {
-                foreach (string line in System.IO.File.ReadLines(@"C:\FEB_19(A).csv"))
+                foreach (string line in System.IO.File.ReadLines(@"C:\Coil master 28-02-2019.csv"))
                 {
                     if (COILID.Equals(line.Substring(0, 9)))
                     {
@@ -253,6 +258,14 @@ namespace GenerateSlitLabel
                                 slitNumber = 4;
                                 slitWidth = 255;
                                 break;
+                            case "LA":
+                                slitNumber = 8;
+                                slitWidth = 116;
+                                break;
+                            case "GS":
+                                slitNumber = 11;
+                                slitWidth = 84;
+                                break;
                             //case "IS":
                             //    slitNumber = 8;
                             //    slitWidth = 116;
@@ -287,6 +300,16 @@ namespace GenerateSlitLabel
                 ErrMsg.Text = "Please Scan an ID.";
                 ErrMsg.ForeColor = Color.Red;
                 ErrMsg.Font = new System.Drawing.Font("Ariel", 20);
+            }
+
+            // add timestamp and coil ID to a new file.
+            string path = @"C:\coilSlitTime.csv";
+            if (COILID != "")
+            {
+                TextWriter txt = new StreamWriter(path, true); // true means text will be appended to the file.
+                DateTime now = DateTime.Now;
+                txt.WriteLine(COILID + "," + now);
+                txt.Close();
             }
         }
     }

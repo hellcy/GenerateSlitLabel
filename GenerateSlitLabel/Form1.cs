@@ -144,13 +144,6 @@ namespace GenerateSlitLabel
                             return;
                         }
 
-                        // if double colors, split them and add the third letter to each color
-                        if (color.Length == 4)
-                        {
-                            front_color = color.Substring(0, 2);
-                            back_color = color.Substring(2, 2);
-                        }
-
                         switch (TYPE)
                         {
                             case "RA":

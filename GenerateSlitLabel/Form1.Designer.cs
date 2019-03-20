@@ -48,6 +48,9 @@
             this.size_108 = new System.Windows.Forms.Label();
             this.Qty = new System.Windows.Forms.Label();
             this.Width = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.SmartSlatLabel = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // printPreviewDialog1
@@ -100,7 +103,7 @@
             this.ErrMsg.AutoSize = true;
             this.ErrMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ErrMsg.ForeColor = System.Drawing.Color.Red;
-            this.ErrMsg.Location = new System.Drawing.Point(272, 96);
+            this.ErrMsg.Location = new System.Drawing.Point(272, 104);
             this.ErrMsg.Name = "ErrMsg";
             this.ErrMsg.Size = new System.Drawing.Size(0, 20);
             this.ErrMsg.TabIndex = 4;
@@ -117,7 +120,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(50, 123);
+            this.textBox2.Location = new System.Drawing.Point(37, 68);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(20, 22);
             this.textBox2.TabIndex = 6;
@@ -126,7 +129,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBox3.Location = new System.Drawing.Point(91, 123);
+            this.textBox3.Location = new System.Drawing.Point(78, 68);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(20, 22);
             this.textBox3.TabIndex = 7;
@@ -135,7 +138,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBox4.Location = new System.Drawing.Point(137, 123);
+            this.textBox4.Location = new System.Drawing.Point(124, 68);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(20, 22);
             this.textBox4.TabIndex = 8;
@@ -144,7 +147,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBox5.Location = new System.Drawing.Point(182, 123);
+            this.textBox5.Location = new System.Drawing.Point(169, 68);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(20, 22);
             this.textBox5.TabIndex = 9;
@@ -153,7 +156,7 @@
             // textBox6
             // 
             this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.textBox6.Location = new System.Drawing.Point(231, 123);
+            this.textBox6.Location = new System.Drawing.Point(218, 68);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(20, 22);
             this.textBox6.TabIndex = 10;
@@ -162,7 +165,7 @@
             // size_51
             // 
             this.size_51.AutoSize = true;
-            this.size_51.Location = new System.Drawing.Point(51, 96);
+            this.size_51.Location = new System.Drawing.Point(38, 43);
             this.size_51.Name = "size_51";
             this.size_51.Size = new System.Drawing.Size(19, 13);
             this.size_51.TabIndex = 11;
@@ -171,7 +174,7 @@
             // size_67
             // 
             this.size_67.AutoSize = true;
-            this.size_67.Location = new System.Drawing.Point(92, 96);
+            this.size_67.Location = new System.Drawing.Point(79, 43);
             this.size_67.Name = "size_67";
             this.size_67.Size = new System.Drawing.Size(19, 13);
             this.size_67.TabIndex = 12;
@@ -180,7 +183,7 @@
             // size_83
             // 
             this.size_83.AutoSize = true;
-            this.size_83.Location = new System.Drawing.Point(138, 96);
+            this.size_83.Location = new System.Drawing.Point(125, 43);
             this.size_83.Name = "size_83";
             this.size_83.Size = new System.Drawing.Size(19, 13);
             this.size_83.TabIndex = 13;
@@ -189,7 +192,7 @@
             // size_92
             // 
             this.size_92.AutoSize = true;
-            this.size_92.Location = new System.Drawing.Point(183, 96);
+            this.size_92.Location = new System.Drawing.Point(170, 43);
             this.size_92.Name = "size_92";
             this.size_92.Size = new System.Drawing.Size(19, 13);
             this.size_92.TabIndex = 14;
@@ -198,7 +201,7 @@
             // size_108
             // 
             this.size_108.AutoSize = true;
-            this.size_108.Location = new System.Drawing.Point(226, 96);
+            this.size_108.Location = new System.Drawing.Point(213, 43);
             this.size_108.Name = "size_108";
             this.size_108.Size = new System.Drawing.Size(25, 13);
             this.size_108.TabIndex = 15;
@@ -207,7 +210,7 @@
             // Qty
             // 
             this.Qty.AutoSize = true;
-            this.Qty.Location = new System.Drawing.Point(16, 128);
+            this.Qty.Location = new System.Drawing.Point(3, 73);
             this.Qty.Name = "Qty";
             this.Qty.Size = new System.Drawing.Size(23, 13);
             this.Qty.TabIndex = 16;
@@ -216,29 +219,49 @@
             // Width
             // 
             this.Width.AutoSize = true;
-            this.Width.Location = new System.Drawing.Point(13, 96);
+            this.Width.Location = new System.Drawing.Point(3, 43);
             this.Width.Name = "Width";
             this.Width.Size = new System.Drawing.Size(35, 13);
             this.Width.TabIndex = 17;
             this.Width.Text = "Width";
             // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.SmartSlatLabel);
+            this.panel1.Controls.Add(this.Width);
+            this.panel1.Controls.Add(this.size_108);
+            this.panel1.Controls.Add(this.Qty);
+            this.panel1.Controls.Add(this.size_92);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.size_83);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.size_67);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.size_51);
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Location = new System.Drawing.Point(12, 77);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(254, 100);
+            this.panel1.TabIndex = 18;
+            // 
+            // SmartSlatLabel
+            // 
+            this.SmartSlatLabel.AutoSize = true;
+            this.SmartSlatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SmartSlatLabel.Location = new System.Drawing.Point(70, 9);
+            this.SmartSlatLabel.Name = "SmartSlatLabel";
+            this.SmartSlatLabel.Size = new System.Drawing.Size(119, 16);
+            this.SmartSlatLabel.TabIndex = 18;
+            this.SmartSlatLabel.Text = "For SmartSlat Only";
+            // 
             // GenerateSlitLabel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 155);
-            this.Controls.Add(this.Width);
-            this.Controls.Add(this.Qty);
-            this.Controls.Add(this.size_108);
-            this.Controls.Add(this.size_92);
-            this.Controls.Add(this.size_83);
-            this.Controls.Add(this.size_67);
-            this.Controls.Add(this.size_51);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.ClientSize = new System.Drawing.Size(567, 193);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.ScanLabel);
             this.Controls.Add(this.ErrMsg);
             this.Controls.Add(this.printBtn);
@@ -246,6 +269,8 @@
             this.Controls.Add(this.textBox1);
             this.Name = "GenerateSlitLabel";
             this.Text = "GenerateSlitLabel";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,6 +297,8 @@
         private System.Windows.Forms.Label size_108;
         private System.Windows.Forms.Label Qty;
         private System.Windows.Forms.Label Width;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label SmartSlatLabel;
     }
 }
 

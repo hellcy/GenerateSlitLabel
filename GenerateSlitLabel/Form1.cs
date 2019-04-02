@@ -24,7 +24,6 @@ namespace GenerateSlitLabel
             row.Cells[1].Value = 2;
         }
 
-        string[] slitIDs;
         string[] slitLabels;
         string color, front_color, back_color;
         string COILID, TYPE = "", COLOR, GAUGE;
@@ -32,7 +31,7 @@ namespace GenerateSlitLabel
         string type;
         int pageNumber = 0;
         bool canPressButton = false;
-        PaperSize paperSize = new PaperSize("papersize", 800, 250);//set the paper size
+        PaperSize paperSize = new PaperSize("papersize", 800, 250); //set the paper size
 
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
@@ -201,11 +200,9 @@ namespace GenerateSlitLabel
 
             //            if (slitNumber > 0)
             //            {
-            //                slitIDs = new string[slitNumber];
             //                slitLabels = new string[slitNumber];
-            //                for (int i = 1; i < slitIDs.Length + 1; i = i + 2)
+            //                for (int i = 1; i < slitLabels.Length + 1; i = i + 2)
             //                {
-            //                    slitIDs[i - 1] = COILID + "_" + i;
             //                    slitLabels[i - 1] = COILID + "_" + i + "&" + (i + 1) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / slitNumber) + "+" + GAUGE + "+" + slitWidth;
             //                }
             //                printDocument1.DefaultPageSettings.PaperSize = paperSize;
@@ -217,42 +214,36 @@ namespace GenerateSlitLabel
             //            if (slitNumber == -1)
             //            {
             //                slitNumber = Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text) + Int32.Parse(textBox6.Text);
-            //                slitIDs = new string[slitNumber];
             //                slitLabels = new string[slitNumber];
 
             //                // fill in label information for each diffferent width
             //                for (int i = 1; i < Int32.Parse(textBox2.Text) + 1; i++)
             //                {
             //                    slitWidth = 51;
-            //                    slitIDs[i - 1] = COILID + "_" + i;
             //                    slitLabels[i - 1] = COILID + "_" + i + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
             //                }
 
             //                for (int i = 1; i < Int32.Parse(textBox3.Text) + 1; i++)
             //                {
             //                    slitWidth = 67;
-            //                    slitIDs[i - 1 + Int32.Parse(textBox2.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text));
             //                    slitLabels[i - 1 + Int32.Parse(textBox2.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
             //                }
 
             //                for (int i = 1; i < Int32.Parse(textBox4.Text) + 1; i++)
             //                {
             //                    slitWidth = 83;
-            //                    slitIDs[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text));
             //                    slitLabels[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
             //                }
 
             //                for (int i = 1; i < Int32.Parse(textBox5.Text) + 1; i++)
             //                {
             //                    slitWidth = 92;
-            //                    slitIDs[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text));
             //                    slitLabels[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
             //                }
 
             //                for (int i = 1; i < Int32.Parse(textBox6.Text) + 1; i++)
             //                {
             //                    slitWidth = 108;
-            //                    slitIDs[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text));
             //                    slitLabels[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
             //                }
 
@@ -273,8 +264,6 @@ namespace GenerateSlitLabel
             canPressButton = false;
             if (e.KeyCode == Keys.Enter)
             {
-                // remember to set global variable pageNumber to 0 everytime you press the button. Reset the page number count.
-                pageNumber = 0;
                 ErrMsg.Text = "";
 
                 if (textBox1.Text.Length < 9)
@@ -285,9 +274,9 @@ namespace GenerateSlitLabel
 
                 COILID = textBox1.Text.Substring(0, 9);
 
-                if ((System.IO.File.Exists(@"C:\Coil Master.csv")) == true)
+                if ((System.IO.File.Exists(@"C:\GenerateSlitLabelsFile\Coil Master.csv")) == true)
                 {
-                    foreach (string line in System.IO.File.ReadAllLines(@"C:\Coil Master.csv"))
+                    foreach (string line in System.IO.File.ReadAllLines(@"C:\GenerateSlitLabelsFile\Coil Master.csv"))
                     {
                         if (COILID.Equals(line.Substring(0, 9)))
                         {
@@ -357,11 +346,9 @@ namespace GenerateSlitLabel
 
                             if (slitNumber > 0)
                             {
-                                slitIDs = new string[slitNumber];
                                 slitLabels = new string[slitNumber];
-                                for (int i = 1; i < slitIDs.Length + 1; i = i + 2)
+                                for (int i = 1; i < slitLabels.Length + 1; i = i + 2)
                                 {
-                                    slitIDs[i - 1] = COILID + "_" + i;
                                     slitLabels[i - 1] = COILID + "_" + i + "&" + (i + 1) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / slitNumber) + "+" + GAUGE + "+" + slitWidth;
                                 }
                                 break;
@@ -371,42 +358,36 @@ namespace GenerateSlitLabel
                             if (slitNumber == -1)
                             {
                                 slitNumber = Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text) + Int32.Parse(textBox6.Text);
-                                slitIDs = new string[slitNumber];
                                 slitLabels = new string[slitNumber];
 
                                 // fill in label information for each diffferent width
                                 for (int i = 1; i < Int32.Parse(textBox2.Text) + 1; i++)
                                 {
                                     slitWidth = 51;
-                                    slitIDs[i - 1] = COILID + "_" + i;
                                     slitLabels[i - 1] = COILID + "_" + i + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
                                 }
 
                                 for (int i = 1; i < Int32.Parse(textBox3.Text) + 1; i++)
                                 {
                                     slitWidth = 67;
-                                    slitIDs[i - 1 + Int32.Parse(textBox2.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text));
                                     slitLabels[i - 1 + Int32.Parse(textBox2.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
                                 }
 
                                 for (int i = 1; i < Int32.Parse(textBox4.Text) + 1; i++)
                                 {
                                     slitWidth = 83;
-                                    slitIDs[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text));
                                     slitLabels[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
                                 }
 
                                 for (int i = 1; i < Int32.Parse(textBox5.Text) + 1; i++)
                                 {
                                     slitWidth = 92;
-                                    slitIDs[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text));
                                     slitLabels[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
                                 }
 
                                 for (int i = 1; i < Int32.Parse(textBox6.Text) + 1; i++)
                                 {
                                     slitWidth = 108;
-                                    slitIDs[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text));
                                     slitLabels[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
                                 }
                                 break;
@@ -423,25 +404,25 @@ namespace GenerateSlitLabel
 
         private void printBtn_Click(object sender, EventArgs e)
         {
-            if (slitLabels != null)
-            {
-                int numberOfCopy = 2;
-                if (TYPE == "SM") numberOfCopy = 1;
-                printDocument1.DefaultPageSettings.PaperSize = paperSize;
-                ErrMsg.Text = "";
-                string printer = "ZDesigner S4M-203dpi ZPL";
-                Printing(printer, numberOfCopy);
-            }
-            else
-            {
-                ErrMsg.Text = "Please Scan an ID.";
-                ErrMsg.ForeColor = Color.Red;
-                ErrMsg.Font = new System.Drawing.Font("Ariel", 20);
-            }
+            //if (slitLabels != null)
+            //{
+            //    int numberOfCopy = 2;
+            //    if (TYPE == "SM") numberOfCopy = 1;
+            //    printDocument1.DefaultPageSettings.PaperSize = paperSize;
+            //    ErrMsg.Text = "";
+            //    string printer = "ZDesigner S4M-203dpi ZPL";
+            //    Printing(printer, numberOfCopy);
+            //}
+            //else
+            //{
+            //    ErrMsg.Text = "Please Scan an ID.";
+            //    ErrMsg.ForeColor = Color.Red;
+            //    ErrMsg.Font = new System.Drawing.Font("Ariel", 20);
+            //}
 
             // add timestamp and coil ID to a new file.
-            string path = @"C:\coilSlitTime.csv";
-            if (COILID != "")
+            string path = @"C:\GenerateSlitLabelsFile\coilSlitTime.csv";
+            if (slitLabels != null)
             {
                 TextWriter txt = new StreamWriter(path, true); // true means text will be appended to the file.
                 DateTime now = DateTime.Now;
@@ -536,11 +517,9 @@ namespace GenerateSlitLabel
 
             //            if (slitNumber > 0)
             //            {
-            //                slitIDs = new string[slitNumber];
             //                slitLabels = new string[slitNumber];
-            //                for (int i = 1; i < slitIDs.Length + 1; i = i + 2)
+            //                for (int i = 1; i < slitLabels.Length + 1; i = i + 2)
             //                {
-            //                    slitIDs[i - 1] = COILID + "_" + i;
             //                    slitLabels[i - 1] = COILID + "_" + i + "&" + (i + 1) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / slitNumber) + "+" + GAUGE + "+" + slitWidth;
             //                }
             //                break;
@@ -550,42 +529,36 @@ namespace GenerateSlitLabel
             //            if (slitNumber == -1)
             //            {
             //                slitNumber = Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text) + Int32.Parse(textBox6.Text);
-            //                slitIDs = new string[slitNumber];
             //                slitLabels = new string[slitNumber];
 
             //                // fill in label information for each diffferent width
             //                for (int i = 1; i < Int32.Parse(textBox2.Text) + 1; i++)
             //                {
             //                    slitWidth = 51;
-            //                    slitIDs[i - 1] = COILID + "_" + i;
             //                    slitLabels[i - 1] = COILID + "_" + i + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
             //                }
 
             //                for (int i = 1; i < Int32.Parse(textBox3.Text) + 1; i++)
             //                {
             //                    slitWidth = 67;
-            //                    slitIDs[i - 1 + Int32.Parse(textBox2.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text));
             //                    slitLabels[i - 1 + Int32.Parse(textBox2.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
             //                }
 
             //                for (int i = 1; i < Int32.Parse(textBox4.Text) + 1; i++)
             //                {
             //                    slitWidth = 83;
-            //                    slitIDs[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text));
             //                    slitLabels[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
             //                }
 
             //                for (int i = 1; i < Int32.Parse(textBox5.Text) + 1; i++)
             //                {
             //                    slitWidth = 92;
-            //                    slitIDs[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text));
             //                    slitLabels[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
             //                }
 
             //                for (int i = 1; i < Int32.Parse(textBox6.Text) + 1; i++)
             //                {
             //                    slitWidth = 108;
-            //                    slitIDs[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text));
             //                    slitLabels[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
             //                }
             //                break;
@@ -620,12 +593,6 @@ namespace GenerateSlitLabel
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        // test datagriview value only
-        private void button1_Click(object sender, EventArgs e)
-        {
-            var test = dataGridView1.Rows[0].Cells[0].Value;
         }
     }
 }

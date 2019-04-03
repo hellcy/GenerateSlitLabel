@@ -52,10 +52,10 @@ namespace GenerateSlitLabel
             this.Width = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.SmartSlatLabel = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CoilWidth = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CoilWidth2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CoilWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -111,7 +111,7 @@ namespace GenerateSlitLabel
             this.ErrMsg.AutoSize = true;
             this.ErrMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ErrMsg.ForeColor = System.Drawing.Color.Red;
-            this.ErrMsg.Location = new System.Drawing.Point(272, 104);
+            this.ErrMsg.Location = new System.Drawing.Point(91, 19);
             this.ErrMsg.Name = "ErrMsg";
             this.ErrMsg.Size = new System.Drawing.Size(0, 20);
             this.ErrMsg.TabIndex = 4;
@@ -264,44 +264,40 @@ namespace GenerateSlitLabel
             this.SmartSlatLabel.TabIndex = 18;
             this.SmartSlatLabel.Text = "For SmartSlat Only";
             // 
+            // CoilWidth
+            // 
+            this.CoilWidth.Name = "CoilWidth";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CoilWidth,
-            this.Weight});
-            this.dataGridView1.Location = new System.Drawing.Point(301, 121);
+            this.CoilWidth2,
+            this.CoilWeight});
+            this.dataGridView1.Location = new System.Drawing.Point(325, 87);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView1.Size = new System.Drawing.Size(203, 235);
             this.dataGridView1.TabIndex = 19;
             // 
-            // CoilWidth
+            // CoilWidth2
             // 
-            this.CoilWidth.HeaderText = "Width";
-            this.CoilWidth.Name = "CoilWidth";
+            this.CoilWidth2.HeaderText = "Width(mm)";
+            this.CoilWidth2.Name = "CoilWidth2";
             // 
-            // Weight
+            // CoilWeight
             // 
-            this.Weight.HeaderText = "Weight";
-            this.Weight.Name = "Weight";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(186, 232);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.CoilWeight.HeaderText = "Weight(kg)";
+            this.CoilWeight.Name = "CoilWeight";
             // 
             // GenerateSlitLabel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(567, 334);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ScanLabel);
@@ -342,10 +338,10 @@ namespace GenerateSlitLabel
         private System.Windows.Forms.Label Width;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label SmartSlatLabel;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CoilWidth;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Weight;
-        private Button button1;
+        private DataGridViewTextBoxColumn CoilWidth;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn CoilWidth2;
+        private DataGridViewTextBoxColumn CoilWeight;
     }
 }
 

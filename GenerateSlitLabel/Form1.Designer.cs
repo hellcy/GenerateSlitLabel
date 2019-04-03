@@ -287,6 +287,7 @@ namespace GenerateSlitLabel
             // 
             this.CoilWidth2.HeaderText = "Width(mm)";
             this.CoilWidth2.Name = "CoilWidth2";
+            this.CoilWidth2.ReadOnly = true;
             // 
             // CoilWeight
             // 

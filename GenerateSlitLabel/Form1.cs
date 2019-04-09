@@ -24,7 +24,7 @@ namespace GenerateSlitLabel
         string[] slitLabels;
         string COILID, TYPE, COLOR, GAUGE, front_color, back_color;
         int WEIGHT, WIDTH, slitNumber = 0, slitWidth = 0, pageNumber = 0;
-        PaperSize paperSize = new PaperSize("papersize", 800, 250); //set the paper size
+        PaperSize paperSize = new PaperSize("papersize", 250, 800); //set the paper size
 
         private void TypeText_TextChanged(object sender, EventArgs e)
         {
@@ -57,8 +57,7 @@ namespace GenerateSlitLabel
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
             int placeHolder;
-            if (textBox2.Text == "") textBox2.Text = "0";
-            if (int.TryParse(textBox2.Text, out placeHolder))
+            if (textBox2.Text != "" && int.TryParse(textBox2.Text, out placeHolder))
             {
                 canCreateLabel();
             }
@@ -68,8 +67,7 @@ namespace GenerateSlitLabel
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             int placeHolder;
-            if (textBox3.Text == "") textBox3.Text = "0";
-            if (int.TryParse(textBox3.Text, out placeHolder))
+            if (textBox3.Text != "" && int.TryParse(textBox3.Text, out placeHolder))
             {
                 canCreateLabel();
             }
@@ -79,8 +77,7 @@ namespace GenerateSlitLabel
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
             int placeHolder;
-            if (textBox4.Text == "") textBox4.Text = "0";
-            if (int.TryParse(textBox4.Text, out placeHolder))
+            if (textBox4.Text != "" && int.TryParse(textBox4.Text, out placeHolder))
             {
                 canCreateLabel();
             }
@@ -90,8 +87,7 @@ namespace GenerateSlitLabel
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
             int placeHolder;
-            if (textBox5.Text == "") textBox5.Text = "0";
-            if (int.TryParse(textBox5.Text, out placeHolder))
+            if (textBox5.Text != "" && int.TryParse(textBox5.Text, out placeHolder))
             {
                 canCreateLabel();
             }
@@ -101,8 +97,7 @@ namespace GenerateSlitLabel
         private void textBox6_TextChanged(object sender, EventArgs e)
         {
             int placeHolder;
-            if (textBox6.Text == "") textBox6.Text = "0";
-            if (int.TryParse(textBox6.Text, out placeHolder))
+            if (textBox6.Text != "" && int.TryParse(textBox6.Text, out placeHolder))
             {
                 canCreateLabel();
             }
@@ -112,13 +107,11 @@ namespace GenerateSlitLabel
         private void SMFrontColorText_TextChanged(object sender, EventArgs e)
         {
             canCreateLabel();
-
         }
 
         private void SMBackColorText_TextChanged(object sender, EventArgs e)
         {
             canCreateLabel();
-
         }
 
         private void textBox1_KeyUp(object sender, KeyEventArgs e)
@@ -127,11 +120,11 @@ namespace GenerateSlitLabel
             {
                 dataGridView1.Rows.Clear();
                 ErrMsg.Text = "";
-                textBox2.Text = "2";
-                textBox2.Text = "4";
                 textBox2.Text = "3";
-                textBox2.Text = "2";
-                textBox2.Text = "2";
+                textBox3.Text = "4";
+                textBox4.Text = "3";
+                textBox5.Text = "2";
+                textBox6.Text = "2";
                 slitLabels = null;
 
                 if (textBox1.Text.Length < 9)
@@ -140,7 +133,7 @@ namespace GenerateSlitLabel
                     return;
                 }
 
-                COILID = textBox1.Text.Substring(0, 9);
+                COILID = textBox1.Text.Substring(0, 9).ToUpper();
 
                 if ((System.IO.File.Exists(@"C:\GenerateSlitLabelsFile\COIL_MASTER_20190408.csv")) == true)
                 {
@@ -163,7 +156,6 @@ namespace GenerateSlitLabel
                             {
 
                                 createLabels();
-                                textBox1.Text = "";
 
                             }
                             else
@@ -256,6 +248,7 @@ namespace GenerateSlitLabel
                 {
                     slitWidth = 51;
                     slitLabels[i - 1] = COILID + "_" + i + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
+                    dataGridView1.Rows[i - 1].Cells[0].Value += " (" + slitWidth + ")";
                     dataGridView1.Rows[i - 1].Cells[1].Value = (int)(WEIGHT / WIDTH * slitWidth);
                 }
 
@@ -263,6 +256,7 @@ namespace GenerateSlitLabel
                 {
                     slitWidth = 67;
                     slitLabels[i - 1 + Int32.Parse(textBox2.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
+                    dataGridView1.Rows[i - 1 + Int32.Parse(textBox2.Text)].Cells[0].Value += " (" + slitWidth + ")";
                     dataGridView1.Rows[i - 1 + Int32.Parse(textBox2.Text)].Cells[1].Value = (int)(WEIGHT / WIDTH * slitWidth);
                 }
 
@@ -270,6 +264,7 @@ namespace GenerateSlitLabel
                 {
                     slitWidth = 83;
                     slitLabels[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
+                    dataGridView1.Rows[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text)].Cells[0].Value += " (" + slitWidth + ")";
                     dataGridView1.Rows[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text)].Cells[1].Value = (int)(WEIGHT / WIDTH * slitWidth);
                 }
 
@@ -277,6 +272,7 @@ namespace GenerateSlitLabel
                 {
                     slitWidth = 92;
                     slitLabels[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
+                    dataGridView1.Rows[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text)].Cells[0].Value += " (" + slitWidth + ")";
                     dataGridView1.Rows[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text)].Cells[1].Value = (int)(WEIGHT / WIDTH * slitWidth);
                 }
 
@@ -284,6 +280,7 @@ namespace GenerateSlitLabel
                 {
                     slitWidth = 108;
                     slitLabels[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text)] = COILID + "_" + (i + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text)) + "+" + TYPE + "+" + COLOR + "+" + (int)(WEIGHT / WIDTH * slitWidth) + "+" + GAUGE + "+" + slitWidth;
+                    dataGridView1.Rows[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text)].Cells[0].Value += " (" + slitWidth + ")";
                     dataGridView1.Rows[i - 1 + Int32.Parse(textBox2.Text) + Int32.Parse(textBox3.Text) + Int32.Parse(textBox4.Text) + Int32.Parse(textBox5.Text)].Cells[1].Value = (int)(WEIGHT / WIDTH * slitWidth);
                 }
             }
@@ -294,7 +291,6 @@ namespace GenerateSlitLabel
             if (canPressButton())
             {
                 pageNumber = 0;
-
                 weightOverride();
 
                 printDocument1.DefaultPageSettings.PaperSize = paperSize;
@@ -306,6 +302,7 @@ namespace GenerateSlitLabel
         {
             if (canPressButton())
             {
+                pageNumber = 0;
                 weightOverride();
 
                 if (slitLabels != null)
@@ -315,7 +312,7 @@ namespace GenerateSlitLabel
                     printDocument1.DefaultPageSettings.PaperSize = paperSize;
                     ErrMsg.Text = "";
                     string printer = "ZDesigner S4M-203dpi ZPL";
-                    Printing(printer, numberOfCopy);
+                    //Printing(printer, numberOfCopy);
                 }
                 else
                 {
@@ -330,7 +327,11 @@ namespace GenerateSlitLabel
                 {
                     TextWriter txt = new StreamWriter(path, true); // true means text will be appended to the file.
                     DateTime now = DateTime.Now;
-                    txt.WriteLine(COILID + "," + now);
+                    for (int i = 0; i < slitLabels.Length; i++)
+                    {
+                        string[] tempArray = slitLabels[i].Split('+');
+                        txt.WriteLine(tempArray[0] + "," + tempArray[1] + "," + tempArray[2] + "," + tempArray[3] + "," + tempArray[4] + "," + tempArray[5] + "," + now);
+                    }
                     txt.Close();
                 }
             }
@@ -338,12 +339,14 @@ namespace GenerateSlitLabel
 
         private bool canPressButton()
         {
-            return slitLabels != null && TypeText.Text != "" && ColorText.Text != "" && GaugeText.Text != "" && Int32.TryParse(WeightText.Text, out WEIGHT) && Int32.TryParse(WidthText.Text, out WIDTH);
+            if (TypeText.Text.ToUpper() == "SM")
+                return slitLabels != null && TypeText.Text != "" && ColorText.Text != "" && GaugeText.Text != "" && Int32.TryParse(WeightText.Text, out WEIGHT) && Int32.TryParse(WidthText.Text, out WIDTH) && SMFrontColorText.Text != "" && SMBackColorText.Text != "";
+            else return slitLabels != null && TypeText.Text != "" && ColorText.Text != "" && GaugeText.Text != "" && Int32.TryParse(WeightText.Text, out WEIGHT) && Int32.TryParse(WidthText.Text, out WIDTH);
         }
 
         private void canCreateLabel()
         {
-            if (textBox1.Text != "" && TypeText.Text != "" && ColorText.Text != "" && GaugeText.Text != "" && Int32.TryParse(WeightText.Text, out WEIGHT) && Int32.TryParse(WidthText.Text, out WIDTH))
+            if (TypeText.Text != "" && ColorText.Text != "" && GaugeText.Text != "" && Int32.TryParse(WeightText.Text, out WEIGHT) && Int32.TryParse(WidthText.Text, out WIDTH))
             {
                 if (TypeText.Text.ToUpper() == "SM" && (SMFrontColorText.Text == "" || SMBackColorText.Text == ""))
                 {
@@ -367,10 +370,11 @@ namespace GenerateSlitLabel
             {
                 PrintDocument pd = new PrintDocument();
                 pd.PrintPage += new PrintPageEventHandler(printDocument1_PrintPage);
-                pd.PrinterSettings.PrinterName = printer;
+                //pd.PrinterSettings.PrinterName = printer;
                 pd.PrinterSettings.Copies = (short)numberOfCopy; // set number of copies for each page
                 if (pd.PrinterSettings.IsValid)
                 {
+                    textBox1.Text = "";
                     pd.Print();
                 }
                 else
@@ -417,9 +421,9 @@ namespace GenerateSlitLabel
                     COLOR = SMFrontColorText.Text;
                     drawBrush = new SolidBrush(Color.White);
                     System.Drawing.Font colorFont2 = new System.Drawing.Font("Ariel", 40, FontStyle.Bold);
-                    g.FillRectangle(new SolidBrush(Color.Black), 190, 125, 130, 60);
+                    g.FillRectangle(new SolidBrush(Color.Black), 170, 125, 170, 60);
 
-                    RectangleF colorRect2 = new RectangleF(180.0F, 120.0F, 150.0F, 80.0F);
+                    RectangleF colorRect2 = new RectangleF(160.0F, 120.0F, 180.0F, 80.0F);
                     g.DrawString(SMBackColorText.Text.ToUpper(), colorFont2, drawBrush, colorRect2, sf);
                 }
 
@@ -427,7 +431,7 @@ namespace GenerateSlitLabel
                 drawBrush = new SolidBrush(Color.Black);
 
                 System.Drawing.Font colorFont = new System.Drawing.Font("Arial Black", 50, FontStyle.Bold);
-                RectangleF colorRect = new RectangleF(150.0F, 40.0F, 210.0F, 80.0F);
+                RectangleF colorRect = new RectangleF(150.0F, 40.0F, 220.0F, 80.0F);
                 g.DrawString(COLOR.ToUpper(), colorFont, drawBrush, colorRect, sf);
 
                 // type

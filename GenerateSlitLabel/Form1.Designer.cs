@@ -31,12 +31,12 @@ namespace GenerateSlitLabel
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GenerateSlitLabel));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -44,11 +44,11 @@ namespace GenerateSlitLabel
             this.printBtn = new System.Windows.Forms.Button();
             this.ErrMsg = new System.Windows.Forms.Label();
             this.ScanLabel = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.width51Qty = new System.Windows.Forms.TextBox();
+            this.width67Qty = new System.Windows.Forms.TextBox();
+            this.width83Qty = new System.Windows.Forms.TextBox();
+            this.width92Qty = new System.Windows.Forms.TextBox();
+            this.width108Qty = new System.Windows.Forms.TextBox();
             this.size_51 = new System.Windows.Forms.Label();
             this.size_67 = new System.Windows.Forms.Label();
             this.size_83 = new System.Windows.Forms.Label();
@@ -64,6 +64,8 @@ namespace GenerateSlitLabel
             this.SmartSlatLabel = new System.Windows.Forms.Label();
             this.CoilWidth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CoilWidth2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CoilWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeLabel = new System.Windows.Forms.Label();
             this.ColorLabel = new System.Windows.Forms.Label();
             this.WidthLabel = new System.Windows.Forms.Label();
@@ -74,8 +76,7 @@ namespace GenerateSlitLabel
             this.GaugeText = new System.Windows.Forms.TextBox();
             this.WeightLabel = new System.Windows.Forms.Label();
             this.WeightText = new System.Windows.Forms.TextBox();
-            this.CoilWidth2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CoilWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -131,7 +132,7 @@ namespace GenerateSlitLabel
             this.ErrMsg.AutoSize = true;
             this.ErrMsg.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ErrMsg.ForeColor = System.Drawing.Color.Red;
-            this.ErrMsg.Location = new System.Drawing.Point(116, 9);
+            this.ErrMsg.Location = new System.Drawing.Point(153, 9);
             this.ErrMsg.Name = "ErrMsg";
             this.ErrMsg.Size = new System.Drawing.Size(0, 25);
             this.ErrMsg.TabIndex = 4;
@@ -146,55 +147,55 @@ namespace GenerateSlitLabel
             this.ScanLabel.TabIndex = 5;
             this.ScanLabel.Text = "Please Scan:";
             // 
-            // textBox2
+            // width51Qty
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(80, 160);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(26, 29);
-            this.textBox2.TabIndex = 6;
-            this.textBox2.Text = "3";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.width51Qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.width51Qty.Location = new System.Drawing.Point(80, 160);
+            this.width51Qty.Name = "width51Qty";
+            this.width51Qty.Size = new System.Drawing.Size(26, 29);
+            this.width51Qty.TabIndex = 6;
+            this.width51Qty.Text = "3";
+            this.width51Qty.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // textBox3
+            // width67Qty
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(142, 160);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(26, 29);
-            this.textBox3.TabIndex = 7;
-            this.textBox3.Text = "4";
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.width67Qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.width67Qty.Location = new System.Drawing.Point(142, 160);
+            this.width67Qty.Name = "width67Qty";
+            this.width67Qty.Size = new System.Drawing.Size(26, 29);
+            this.width67Qty.TabIndex = 7;
+            this.width67Qty.Text = "4";
+            this.width67Qty.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
-            // textBox4
+            // width83Qty
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(203, 160);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(26, 29);
-            this.textBox4.TabIndex = 8;
-            this.textBox4.Text = "3";
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.width83Qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.width83Qty.Location = new System.Drawing.Point(203, 160);
+            this.width83Qty.Name = "width83Qty";
+            this.width83Qty.Size = new System.Drawing.Size(26, 29);
+            this.width83Qty.TabIndex = 8;
+            this.width83Qty.Text = "3";
+            this.width83Qty.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
-            // textBox5
+            // width92Qty
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(265, 160);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(26, 29);
-            this.textBox5.TabIndex = 9;
-            this.textBox5.Text = "2";
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.width92Qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.width92Qty.Location = new System.Drawing.Point(265, 160);
+            this.width92Qty.Name = "width92Qty";
+            this.width92Qty.Size = new System.Drawing.Size(26, 29);
+            this.width92Qty.TabIndex = 9;
+            this.width92Qty.Text = "2";
+            this.width92Qty.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // textBox6
+            // width108Qty
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(323, 160);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(25, 29);
-            this.textBox6.TabIndex = 10;
-            this.textBox6.Text = "2";
-            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.width108Qty.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.width108Qty.Location = new System.Drawing.Point(323, 160);
+            this.width108Qty.Name = "width108Qty";
+            this.width108Qty.Size = new System.Drawing.Size(25, 29);
+            this.width108Qty.TabIndex = 10;
+            this.width108Qty.Text = "2";
+            this.width108Qty.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // size_51
             // 
@@ -278,14 +279,14 @@ namespace GenerateSlitLabel
             this.panel1.Controls.Add(this.size_108);
             this.panel1.Controls.Add(this.Qty);
             this.panel1.Controls.Add(this.size_92);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.width51Qty);
             this.panel1.Controls.Add(this.size_83);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.width67Qty);
             this.panel1.Controls.Add(this.size_67);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.width83Qty);
             this.panel1.Controls.Add(this.size_51);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.width92Qty);
+            this.panel1.Controls.Add(this.width108Qty);
             this.panel1.Location = new System.Drawing.Point(23, 303);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(423, 215);
@@ -347,43 +348,61 @@ namespace GenerateSlitLabel
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CoilWidth2,
             this.CoilWeight});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.Location = new System.Drawing.Point(590, 32);
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridView1.RowTemplate.Height = 35;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.Size = new System.Drawing.Size(369, 486);
             this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
+            // 
+            // CoilWidth2
+            // 
+            this.CoilWidth2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoilWidth2.DefaultCellStyle = dataGridViewCellStyle8;
+            this.CoilWidth2.HeaderText = "Coil ID";
+            this.CoilWidth2.Name = "CoilWidth2";
+            this.CoilWidth2.ReadOnly = true;
+            // 
+            // CoilWeight
+            // 
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoilWeight.DefaultCellStyle = dataGridViewCellStyle9;
+            this.CoilWeight.HeaderText = "Weight(kg)";
+            this.CoilWeight.Name = "CoilWeight";
+            this.CoilWeight.Width = 130;
             // 
             // TypeLabel
             // 
@@ -480,28 +499,21 @@ namespace GenerateSlitLabel
             this.WeightText.TabIndex = 30;
             this.WeightText.TextChanged += new System.EventHandler(this.WeightText_TextChanged);
             // 
-            // CoilWidth2
+            // label1
             // 
-            this.CoilWidth2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CoilWidth2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CoilWidth2.HeaderText = "Coil ID";
-            this.CoilWidth2.Name = "CoilWidth2";
-            this.CoilWidth2.ReadOnly = true;
-            // 
-            // CoilWeight
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CoilWeight.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CoilWeight.HeaderText = "Weight(kg)";
-            this.CoilWeight.Name = "CoilWeight";
-            this.CoilWeight.Width = 130;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(490, 366);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 31;
+            this.label1.Text = "label1";
             // 
             // GenerateSlitLabel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(998, 530);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.WeightText);
             this.Controls.Add(this.WeightLabel);
             this.Controls.Add(this.GaugeText);
@@ -538,11 +550,11 @@ namespace GenerateSlitLabel
         private System.Windows.Forms.Button printBtn;
         private System.Windows.Forms.Label ErrMsg;
         private System.Windows.Forms.Label ScanLabel;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox width51Qty;
+        private System.Windows.Forms.TextBox width67Qty;
+        private System.Windows.Forms.TextBox width83Qty;
+        private System.Windows.Forms.TextBox width92Qty;
+        private System.Windows.Forms.TextBox width108Qty;
         private System.Windows.Forms.Label size_51;
         private System.Windows.Forms.Label size_67;
         private System.Windows.Forms.Label size_83;
@@ -570,6 +582,7 @@ namespace GenerateSlitLabel
         private Label SMFrontColorLabel;
         private DataGridViewTextBoxColumn CoilWidth2;
         private DataGridViewTextBoxColumn CoilWeight;
+        private Label label1;
     }
 }
 

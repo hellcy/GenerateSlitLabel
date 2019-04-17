@@ -120,7 +120,6 @@ namespace GenerateSlitLabel
             if (e.KeyCode == Keys.Enter)
             {
                 labelCreatedFlag = 0;
-                label1.Text = labelCreatedFlag.ToString();
                 dataGridView1.Rows.Clear();
                 ErrMsg.Text = "";
                 width51Qty.Text = "3";
@@ -288,8 +287,6 @@ namespace GenerateSlitLabel
                 }
             }
             labelCreatedFlag = 1;
-            label1.Text = labelCreatedFlag.ToString();
-
         }
 
         private void previewBtn_Click(object sender, EventArgs e)

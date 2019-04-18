@@ -64,8 +64,6 @@ namespace GenerateSlitLabel
             this.SmartSlatLabel = new System.Windows.Forms.Label();
             this.CoilWidth = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CoilWidth2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CoilWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeLabel = new System.Windows.Forms.Label();
             this.ColorLabel = new System.Windows.Forms.Label();
             this.WidthLabel = new System.Windows.Forms.Label();
@@ -76,6 +74,8 @@ namespace GenerateSlitLabel
             this.GaugeText = new System.Windows.Forms.TextBox();
             this.WeightLabel = new System.Windows.Forms.Label();
             this.WeightText = new System.Windows.Forms.TextBox();
+            this.CoilWidth2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CoilWeight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -386,23 +386,6 @@ namespace GenerateSlitLabel
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellValueChanged);
             // 
-            // CoilWidth2
-            // 
-            this.CoilWidth2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CoilWidth2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CoilWidth2.HeaderText = "Coil ID";
-            this.CoilWidth2.Name = "CoilWidth2";
-            this.CoilWidth2.ReadOnly = true;
-            // 
-            // CoilWeight
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CoilWeight.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CoilWeight.HeaderText = "Weight(kg)";
-            this.CoilWeight.Name = "CoilWeight";
-            this.CoilWeight.Width = 130;
-            // 
             // TypeLabel
             // 
             this.TypeLabel.AutoSize = true;
@@ -497,6 +480,25 @@ namespace GenerateSlitLabel
             this.WeightText.Size = new System.Drawing.Size(100, 31);
             this.WeightText.TabIndex = 30;
             this.WeightText.TextChanged += new System.EventHandler(this.WeightText_TextChanged);
+            // 
+            // CoilWidth2
+            // 
+            this.CoilWidth2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoilWidth2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.CoilWidth2.HeaderText = "Coil ID";
+            this.CoilWidth2.Name = "CoilWidth2";
+            this.CoilWidth2.ReadOnly = true;
+            this.CoilWidth2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // CoilWeight
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CoilWeight.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CoilWeight.HeaderText = "Weight(kg)";
+            this.CoilWeight.Name = "CoilWeight";
+            this.CoilWeight.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.CoilWeight.Width = 130;
             // 
             // GenerateSlitLabel
             // 
